@@ -61,7 +61,7 @@ const Footer = () => {
             <div className="mt-2 flex justify-center">
               <span className="inline-block bg-gradient-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold shadow-sm">KB</span>
             </div>
-            <div className="mt-2 text-xs text-foreground-muted italic">Made with <span className="text-red-500">❤️</span> by Kanaad Bhat.</div>
+            <div className="mt-2 text-xs text-foreground-muted italic">Made with <span className="text-red-500">🤍</span> by Kanaad Bhat.</div>
           </div>
         </div>
       </div>

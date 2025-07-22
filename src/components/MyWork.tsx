@@ -1,4 +1,7 @@
 import { ExternalLink, Github } from "lucide-react";
+import vendora from "@/assets/vendora.jpeg";
+import buildguild from "@/assets/buildguild.jpeg";
+import apex from "@/assets/apex.jpeg";
 
 const MyWork = () => {
   const projects = [
@@ -19,7 +22,7 @@ const MyWork = () => {
       github: "https://github.com/kanaadbhat/Vendora",
       live: "https://vendora-frontend.onrender.com/",
       featured: true,
-      image: "@/assets/vendora.jpeg",
+      image: vendora,
     },
     {
       title: "buildguild - A Construction Management Tool",
@@ -37,7 +40,7 @@ const MyWork = () => {
       github: "https://github.com/kanaadbhat/buildguild",
       live: "https://buildguild-pro.onrender.com/",
       featured: true,
-      image: "@/assets/buildguild.jpeg"
+      image: buildguild,
     },
     {
       title: "Apex - Housing Society Management System",
@@ -48,7 +51,7 @@ const MyWork = () => {
       github: "https://github.com/kanaadbhat/apex-webdev",
       live: "https://apex-webdev.web.app/",
       featured: false,
-       image: "@/assets/apex.jpeg",
+      image: apex,
     },
   ];
 
@@ -75,7 +78,9 @@ const MyWork = () => {
             <div
               key={index}
               className={`glass-card rounded-2xl p-8 hover-glow transition-all duration-500 animate-fade-in-up ${
-                project.featured ? "lg:grid lg:grid-cols-2 lg:gap-8" : ""
+                project.image || project.featured
+                  ? "lg:grid lg:grid-cols-2 lg:gap-8"
+                  : ""
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
@@ -117,7 +122,6 @@ const MyWork = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg hover:bg-secondary-hover transition-colors duration-300"
                   >
-                    <Github size={20} />
                     Code
                   </a>
                   <a
@@ -126,26 +130,40 @@ const MyWork = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-lg hover-glow transition-all duration-300"
                   >
-                    <ExternalLink size={20} />
                     Live Demo
                   </a>
                 </div>
               </div>
 
-              {project.featured && (
-                <div className="lg:order-2 mt-6 lg:mt-0">
-                  <div className="bg-gradient-secondary rounded-xl p-8 h-full flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <ExternalLink
-                          size={32}
-                          className="text-primary-foreground"
-                        />
+              {project.image && (
+                <div
+                  className={`${
+                    project.featured ? "lg:order-2" : ""
+                  } mt-6 lg:mt-0`}
+                >
+                  <div className="rounded-xl p-0 h-full flex items-center justify-center overflow-hidden border border-card-border shadow-md transform -translate-y-1 hover:translate-y-0 transition-transform duration-300">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                  </div>
+                </div>
+              )}
+              {!project.image &&
+                project.featured && ( // Fallback for featured without image
+                  <div className="lg:order-2 mt-6 lg:mt-0">
+                    <div className="bg-gradient-secondary rounded-xl p-8 h-full flex items-center justify-center">
+                      <div className="text-center text-foreground-secondary">
+                        No image available for this featured project.
                       </div>
-                      <p className="text-foreground-secondary">
-                        Click "Live Demo" to see this project in action
-                      </p>
                     </div>
+                  </div>
+                )}
+              {!project.image && !project.featured && (
+                <div className="mt-6 lg:mt-0">
+                  <div className="rounded-xl p-8 h-full flex items-center justify-center border border-card-border bg-background-secondary text-foreground-secondary text-center">
+                    No image available for this project.
                   </div>
                 </div>
               )}

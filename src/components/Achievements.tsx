@@ -6,7 +6,7 @@ const Achievements = () => {
     { year: 2024, rank: "1st", title: "Apex - Housing Society Management System", competition: "PBL" },
     { year: 2024, rank: "3rd", title: "buildguild - A Construction Management Tool", competition: "DBMS" },
     { year: 2024, rank: "1st", title: "Smart Water Management System", competition: "IOT" },
-    { year: 2024, rank: "3rd", title: "Web Battles Coding Round", competition: "Equinox" }
+    { year: 2024, rank: "3rd", title: "Web Battles Coding Round", competition: "Equinox" },
   ];
 
   const getRankIcon = (rank: string) => {
@@ -121,7 +121,7 @@ const Achievements = () => {
               <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Medal size={32} className="text-primary" />
               </div>
-              <div className="text-2xl font-bold text-foreground mb-1">5</div>
+              <div className="text-2xl font-bold text-foreground mb-1">4</div>
               <div className="text-foreground-secondary text-sm">Total Awards</div>
             </div>
           </div>

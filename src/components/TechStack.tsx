@@ -35,7 +35,7 @@ const TechStack = () => {
     {
       title: "Programming Languages",
       icon: Brain,
-      skills: ["C", "C++", "Python", "Java", "JavaScript", "Dart"],
+      skills: ["C", "C++", "Python", "JavaScript", "Dart"],
       color: "text-pink-400"
     }
   ];

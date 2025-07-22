@@ -60,16 +60,16 @@ const Certifications = () => {
                   <div className={`p-3 rounded-xl ${cert.bgColor} border ${cert.borderColor}`}>
                     <GraduationCap size={28} className={cert.color} />
                   </div>
-                  
+
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-foreground mb-2 leading-tight">
                       {cert.title}
                     </h3>
-                    
+
                     <p className={`font-semibold ${cert.color} mb-3`}>
                       {cert.organization}
                     </p>
-                    
+
                     <div className="flex items-center text-foreground-secondary text-sm">
                       <Calendar size={16} className="mr-2" />
                       {cert.date}
@@ -80,19 +80,38 @@ const Certifications = () => {
             ))}
           </div>
 
+          {/* Credly Verification Subheading */}
+          <div className="text-center mt-16 mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Verify My Credentials
+            </h3>
+            <p className="text-foreground-secondary text-lg max-w-xl mx-auto mb-6">
+              All my digital badges and certifications are verifiable on Credly. Click below to view my full profile.
+            </p>
+            <a
+              href="https://www.credly.com/users/kanaadbhat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-lg hover-glow transition-all duration-300 font-semibold"
+            >
+              <ExternalLink size={20} />
+              View on Credly
+            </a>
+          </div>
+
           {/* Learning Philosophy */}
-          <div className="mt-16">
+          <div className="mt-16"> {/* Adjust mt-16 if it's too much space after the new Credly section */}
             <div className="glass-card rounded-2xl p-8 text-center">
               <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <GraduationCap size={40} className="text-primary-foreground" />
               </div>
-              
+
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Commitment to Continuous Learning
               </h3>
-              
+
               <p className="text-foreground-secondary leading-relaxed max-w-2xl mx-auto mb-6">
-                I believe in staying current with technology trends and continuously expanding my skill set. 
+                I believe in staying current with technology trends and continuously expanding my skill set.
                 These certifications represent my dedication to professional growth and mastery of cutting-edge technologies.
               </p>
 
@@ -124,10 +143,10 @@ const Certifications = () => {
                   <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
                   <span className="text-primary font-semibold">In Progress</span>
                 </div>
-                <h4 className="font-bold text-foreground mb-2">Advanced React & Next.js</h4>
-                <p className="text-foreground-secondary text-sm">Deep dive into server-side rendering and modern React patterns</p>
+             <h4 className="font-bold text-foreground mb-2">Microsoft Power BI</h4>
+<p className="text-foreground-secondary text-sm">Data visualization, dashboard creation, and business intelligence analytics</p>
               </div>
-              
+
               <div className="glass-card rounded-xl p-6 border border-accent/30">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>

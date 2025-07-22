@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+
 
   const navItems = [
     { id: '/', label: 'Home' },
@@ -32,10 +36,20 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNav = (path: string) => {
+ const handleNav = (path: string) => {
+  if (location.pathname === path) {
+    const targetSection = document.getElementById(path);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  } else {
     navigate(path);
     setIsOpen(false);
-  };
+  }
+};
+
 
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-card-border">
