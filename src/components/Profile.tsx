@@ -25,7 +25,7 @@ const Profile = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left animate-fade-in-up">
-            <div className="relative inline-block mb-8">
+            <div className="relative inline-block ">
               <img
                 src={profileImage}
                 alt="Kanaad Bhat"
@@ -66,7 +66,7 @@ const Profile = () => {
               I adapt quickly to dynamic environments, collaborate effectively with diverse teams, 
               and bring solid interpersonal and time management skills to meet organizational goals. 
               My experience spans across full-stack development, with particular expertise in 
-              React.js, Node.js, and modern web technologies.
+              React.js, Express.js, Flutter and modern web technologies.
             </p>
 
             <div className="space-y-4">

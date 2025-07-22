@@ -1,48 +1,72 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github } from "lucide-react";
 
 const MyWork = () => {
   const projects = [
     {
-      title: "buildguild - A Construction Management Tool",
-      duration: "AUG-DEC 2024",
-      description: "A unified construction project management platform featuring modules for progress, financials, materials, and workflows with Clerk authentication in MERN stack.",
-      tech: ["React.js", "Node.js", "MongoDB", "Express.js", "Clerk Auth", "Material-UI"],
-      github: "https://github.com/kanaadbhat/buildguild",
-      live: "https://buildguild-pro.onrender.com/",
-      featured: true
-    },
-    {
       title: "Vendora - AI Vendor Assistant",
       duration: "FEB-JUNE 2025",
-      description: "Built an AI assistant using Gemini Pro to manage daily consumables and subscriptions via natural language queries, with RESTful backend APIs and automated deployment via Render CI/CD Blueprints.",
-      tech: ["React.js", "Node.js", "Gemini AI", "RESTful APIs", "CI/CD", "Express.js"],
+      description:
+        "Built an AI assistant using Gemini Pro to manage daily consumables and subscriptions via natural language queries, with RESTful backend APIs and Razorpay Payment Gateway Integration.",
+      tech: [
+        "Flutter",
+        "Express.js",
+        "Gemini AI",
+        "RESTful APIs",
+        "Riverpod",
+        "MongoDB",
+        "JWT",
+      ],
       github: "https://github.com/kanaadbhat/Vendora",
       live: "https://vendora-frontend.onrender.com/",
-      featured: true
+      featured: true,
+      image: "@/assets/vendora.jpeg",
+    },
+    {
+      title: "buildguild - A Construction Management Tool",
+      duration: "AUG-DEC 2024",
+      description:
+        "A unified construction project management platform featuring modules for progress, financials, materials, and workflows with Clerk authentication in MERN stack.",
+      tech: [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "Clerk Auth",
+        "ShadCN UI",
+      ],
+      github: "https://github.com/kanaadbhat/buildguild",
+      live: "https://buildguild-pro.onrender.com/",
+      featured: true,
+      image: "@/assets/buildguild.jpeg"
     },
     {
       title: "Apex - Housing Society Management System",
       duration: "FEB-MAY 2024",
-      description: "A housing management system with multi-user login support for chairman, security, and users to manage society tasks.",
+      description:
+        "A housing management system with multi-user login support for chairman, security, and users to manage society tasks.",
       tech: ["React.js", "Firebase", "JavaScript", "CSS3", "Multi-user Auth"],
       github: "https://github.com/kanaadbhat/apex-webdev",
       live: "https://apex-webdev.web.app/",
-      featured: false
-    }
+      featured: false,
+       image: "@/assets/apex.jpeg",
+    },
   ];
 
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-4">
-          <span className="inline-block bg-gradient-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold shadow-sm mb-2">KB</span>
+          <span className="inline-block bg-gradient-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold shadow-sm mb-2">
+            KB
+          </span>
         </div>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             My <span className="text-gradient">Work</span>
           </h2>
           <p className="text-foreground-secondary text-lg max-w-2xl mx-auto">
-            Here are some projects I'm most proud of. Each one taught me something new.
+            Here are some projects I'm most proud of. Each one taught me
+            something new.
           </p>
         </div>
 
@@ -51,11 +75,11 @@ const MyWork = () => {
             <div
               key={index}
               className={`glass-card rounded-2xl p-8 hover-glow transition-all duration-500 animate-fade-in-up ${
-                project.featured ? 'lg:grid lg:grid-cols-2 lg:gap-8' : ''
+                project.featured ? "lg:grid lg:grid-cols-2 lg:gap-8" : ""
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className={project.featured ? 'lg:order-1' : ''}>
+              <div className={project.featured ? "lg:order-1" : ""}>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-primary text-sm font-medium bg-primary/10 px-3 py-1 rounded-full">
                     {project.duration}
@@ -70,7 +94,7 @@ const MyWork = () => {
                 <h3 className="text-2xl font-bold text-foreground mb-4">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-foreground-secondary leading-relaxed mb-6">
                   {project.description}
                 </p>
@@ -113,7 +137,10 @@ const MyWork = () => {
                   <div className="bg-gradient-secondary rounded-xl p-8 h-full flex items-center justify-center">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <ExternalLink size={32} className="text-primary-foreground" />
+                        <ExternalLink
+                          size={32}
+                          className="text-primary-foreground"
+                        />
                       </div>
                       <p className="text-foreground-secondary">
                         Click "Live Demo" to see this project in action

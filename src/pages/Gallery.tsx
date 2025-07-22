@@ -17,7 +17,7 @@ const GalleryPage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background-secondary">
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <div className="container mx-auto px-6 py-20">
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold mb-4">Gallery</h1>
@@ -53,4 +53,4 @@ const GalleryPage: React.FC = () => {
   );
 };
 
-export default GalleryPage; 
+export default GalleryPage;

@@ -27,8 +27,6 @@ const Intro = () => {
             <span className="block text-sm text-foreground-muted italic">Fun Fact: I use git stash like a junk drawer — I have no idea what’s in there anymore.</span>
           </div>
           
-          {/* Add a fun fact or motto below the main intro text, e.g., "Fun Fact: I can debug code faster than I can solve a Rubik's cube!" */}
-          {/* Slightly adjust the layout, e.g., add a subtle divider or a custom accent icon next to the name. */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <button
               onClick={scrollToProjects}
@@ -39,7 +37,7 @@ const Intro = () => {
             </button>
             
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/uc?export=download&id=1VPWbUydbyMfSQKki-azZrL7qtuL2SD1c" download
               target="_blank"
               rel="noopener noreferrer"
               className="border border-primary text-primary px-8 py-4 rounded-lg font-semibold 

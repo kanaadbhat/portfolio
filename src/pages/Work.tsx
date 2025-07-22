@@ -9,7 +9,7 @@ const WorkPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <MyWork />
         <TechStack />
         <Achievements />
@@ -20,4 +20,4 @@ const WorkPage = () => {
   );
 };
 
-export default WorkPage; 
+export default WorkPage;

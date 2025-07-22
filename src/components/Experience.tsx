@@ -79,7 +79,7 @@ const Experience = () => {
               <div className="bg-background-secondary rounded-xl p-6">
                 <h4 className="text-lg font-semibold text-foreground mb-3">Technologies Used:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {["React.js", "Node.js", "Express.js", "MongoDB", "JavaScript", "RESTful APIs", "Git"].map((tech, index) => (
+                  {["React.js", "Node.js", "Express.js", "MySQL", "TypeScript", "RESTful APIs", "Git"].map((tech, index) => (
                     <span
                       key={index}
                       className="bg-background text-foreground-secondary px-3 py-1 rounded-full text-sm border border-card-border"
