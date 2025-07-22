@@ -47,7 +47,7 @@ const MyWork = () => {
       duration: "FEB-MAY 2024",
       description:
         "A housing management system with multi-user login support for chairman, security, and users to manage society tasks.",
-      tech: ["React.js", "Firebase", "JavaScript", "CSS3", "Multi-user Auth"],
+      tech: ["HTML", "Firebase", "JavaScript", "CSS3", "Multi-user Auth"],
       github: "https://github.com/kanaadbhat/apex-webdev",
       live: "https://apex-webdev.web.app/",
       featured: false,

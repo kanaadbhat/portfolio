@@ -23,6 +23,10 @@ import neuron_host from '@/assets/neuron_host.jpg';
 import rotaract_installation from '@/assets/rotaract_installation.jpg';
 import engg_explo from '@/assets/engg_explo.jpg';
 import cybersecurity from '@/assets/cybersecurity.jpg';
+import poster_anchors from '@/assets/poster_anchors.jpg';
+import poster_making from '@/assets/poster_making.jpg';
+import hype_reel from '@/assets/hype_reel.jpg';
+import msp_post from '@/assets/msp_post.jpg';
 
 const images = [
   {
@@ -93,29 +97,44 @@ const images = [
     src: cybersecurity,
     title: 'Anchoring at Cybersecurity Awareness session',
   },
+  {
+    src: poster_anchors,
+    title: 'Anchoring at Poster Making Competition, ISTE',
+  },
+  {
+    src: poster_making,
+    title: 'Anchoring at Poster Making Competition, ISTE',
+  },
+  {
+    src: hype_reel,
+    title: 'Hype Reel for MSP 2025 featured at College Lobby Screens',
+  },
+  {
+    src: msp_post,
+    title: 'MSP 2024 Speaker Post',
+  }
 ];
 
-// Define breakpoints for the masonry columns
+
 const breakpointColumnsObj = {
-  default: 4, // Default number of columns for large screens
-  1100: 3,    // 3 columns on screens <= 1100px
-  700: 2,     // 2 columns on screens <= 700px
-  500: 1      // 1 column on screens <= 500px (mobile)
+  default: 4, 
+  1100: 3,   
+  700: 2,     
+  500: 1     
 };
 
 const GalleryPage: React.FC = () => {
   const navigate = useNavigate();
-  // State to manage the currently selected image for the modal
   const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
 
   const openModal = (image: { src: string; title: string }) => {
     setSelectedImage(image);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    document.body.style.overflow = 'hidden'; 
   };
 
   const closeModal = () => {
     setSelectedImage(null);
-    document.body.style.overflow = ''; // Restore scrolling
+    document.body.style.overflow = ''; 
   };
 
   return (
@@ -139,7 +158,7 @@ const GalleryPage: React.FC = () => {
               <div
                 key={idx}
                 className="relative rounded-2xl overflow-hidden shadow-lg group border border-card-border bg-card mb-6 cursor-pointer"
-                onClick={() => openModal(img)} // Click handler to open modal
+                onClick={() => openModal(img)} 
               >
                 <img
                   src={img.src}
@@ -158,15 +177,15 @@ const GalleryPage: React.FC = () => {
       </main>
       <Footer />
 
-      {/* Image Modal (Lightbox) */}
+    
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80 backdrop-blur-sm"
-          onClick={closeModal} // Close when clicking outside the image
+          onClick={closeModal} 
         >
           <div
             className="relative bg-background-secondary rounded-lg p-4 shadow-2xl max-w-full lg:max-w-4xl max-h-[90vh] flex flex-col"
-            onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking on content
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={closeModal}
@@ -178,7 +197,7 @@ const GalleryPage: React.FC = () => {
             <img
               src={selectedImage.src}
               alt={selectedImage.title}
-              className="max-w-full max-h-full object-contain rounded-md" // object-contain ensures full image is visible
+              className="max-w-full max-h-full object-contain rounded-md"
             />
             <div className="mt-4 text-center text-foreground-secondary text-lg font-semibold">
               {selectedImage.title}
