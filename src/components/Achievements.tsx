@@ -1,7 +1,20 @@
 import { Trophy, Award, Medal, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useGalleryContext } from "@/components/GalleryContext";
+import { useNavigate } from "react-router-dom";
+import galleryImages from "@/data/galleryImages";
 
 const Achievements = () => {
+  const { openModal } = useGalleryContext();
+  const navigate = useNavigate();
+
+  const handleClick = (imageId: string) => {
+    const image = galleryImages.find((img) => img.id === imageId);
+    if (image) {
+      navigate(`/gallery?image=${image.id}`);
+    }
+  };
+
   const achievements = [
     {
       year: 2023,
@@ -86,10 +99,10 @@ const Achievements = () => {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6">
             {achievements.map((achievement, index) => (
-              <Link
-                to={`/gallery?image=${achievement.imageId}`}
+              <div
                 key={index}
-                className="block glass-card rounded-2xl p-6 hover-glow transition-all duration-500 animate-fade-in-up"
+                onClick={() => handleClick(achievement.imageId)}
+                className="cursor-pointer block glass-card rounded-2xl p-6 hover-glow transition-all duration-500 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
@@ -132,7 +145,7 @@ const Achievements = () => {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
 

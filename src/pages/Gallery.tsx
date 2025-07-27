@@ -1,183 +1,45 @@
-import React , { useState, useEffect }from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { useNavigate} from 'react-router-dom'; 
-import Masonry from 'react-masonry-css'; 
-import { X } from 'lucide-react';
-import { useSearchParams } from 'react-router-dom';
-
-
-//images
-import apex_award from '@/assets/apex_award.jpeg';
-import buildguild_award from '@/assets/buildguild_award.jpeg';
-import equinox_award from '@/assets/equinox_award.jpeg';
-import iot from '@/assets/iot.jpeg';
-import iot_award from '@/assets/iot_award.jpeg';
-import iste_committee from '@/assets/iste_committee.jpeg';
-import msp_award from '@/assets/msp_award.jpeg';
-import msp_group from '@/assets/msp_group.jpeg';
-import msp_moment_1 from '@/assets/msp_moment_1.jpeg';
-import msp_moment_2 from '@/assets/msp_moment_2.jpeg';
-import msp_trophy from '@/assets/msp_trophy.jpeg';
-import rotaract from '@/assets/rotaract.jpeg';
-import equinox_trophy from '@/assets/equinox_trophy.jpeg';
-import neuron_host from '@/assets/neuron_host.jpg';
-import rotaract_installation from '@/assets/rotaract_installation.jpg';
-import engg_explo from '@/assets/engg_explo.jpg';
-import cybersecurity from '@/assets/cybersecurity.jpg';
-import poster_anchors from '@/assets/poster_anchors.jpg';
-import poster_making from '@/assets/poster_making.jpg';
-import hype_reel from '@/assets/hype_reel.jpg';
-import msp_post from '@/assets/msp_post.jpg';
-
-const images = [
-  {
-    id: apex_award,
-    src: apex_award,
-    title: 'PBL Competition Award Ceremony - Apex',
-  },
-  {
-    id: buildguild_award,
-    src: buildguild_award,
-    title: 'PBL Competition Award Ceremony - buildguild',
-  },
-  {
-    id: equinox_award,
-    src: equinox_award,
-    title: 'Equinox Web Battles Award Ceremony',
-  },
-  {
-    id: iot,
-    src: iot,
-    title: 'IoT Project of Smart Water management System',
-  },
-  {
-    id: iot_award,
-    src: iot_award,
-    title: 'PBL Competition Award Ceremony - Smart Water Management system',
-  },
-  {
-    id: iste_committee,
-    src: iste_committee,
-    title: 'ISTE Core Committee Installation Ceremony',
-  },
-  {
-    id: msp_award,
-    src: msp_award,
-    title: "Master student's Program Award Ceremony",
-  },
-  {
-    id: msp_group,
-    src: msp_group,
-    title: 'MSP 2024 Speakers',
-  },
-  {
-    id: msp_moment_1,
-    src: msp_moment_1,
-    title: 'MSP Clicks',
-  },
-  {
-    id: msp_moment_2,
-    src: msp_moment_2,
-    title: 'MSP Clicks',
-  },
-  {
-    id: msp_trophy,
-    src: msp_trophy,
-    title: 'MSP 2024 Trophy',
-  },
-  {
-    id: rotaract,
-    src: rotaract,
-    title: 'RAC NNH Appreciation Certificate',
-  },
-  {
-    id: neuron_host,
-    src: neuron_host,
-    title: 'Round Host for Neuron Quiz Competition',
-  },
-  {
-    id: rotaract_installation,
-    src: rotaract_installation,
-    title: 'RAC NNH Installation Ceremony',
-  },
-  {
-    id: engg_explo,
-    src: engg_explo,
-    title: 'First Year Engineering Exploration project',
-  },
-  {
-    id: equinox_trophy,
-    src: equinox_trophy,
-    title: 'Equinox Web Battles Trophy',
-  },
-  {
-    id: cybersecurity,
-    src: cybersecurity,
-    title: 'Anchoring at Cybersecurity Awareness session',
-  },
-  {
-    id: poster_anchors,
-    src: poster_anchors,
-    title: 'Anchoring at Poster Making Competition, ISTE',
-  },
-  {
-    id: poster_making,
-    src: poster_making,
-    title: 'Anchoring at Poster Making Competition, ISTE',
-  },
-  {
-    id: hype_reel,
-    src: hype_reel,
-    title: 'Hype Reel for MSP 2025 featured at College Lobby Screens',
-  },
-  {
-    id: msp_post,
-    src: msp_post,
-    title: 'MSP 2024 Speaker Post',
-  }
-];
+import React, { useState, useEffect } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Masonry from "react-masonry-css";
+import { X } from "lucide-react";
+import { useSearchParams, useNavigate } from "react-router-dom";
+import { useGalleryContext } from "@/components/GalleryContext";
+import galleryImages from "@/data/galleryImages";
 
 const breakpointColumnsObj = {
-  default: 4, 
-  1100: 3,   
-  700: 2,     
-  500: 1     
+  default: 4,
+  1100: 3,
+  700: 2,
+  500: 1,
 };
 
 const GalleryPage: React.FC = () => {
- const navigate = useNavigate();
-const [searchParams, setSearchParams] = useSearchParams();
-const imageId = searchParams.get("image");
+ const { images, setImages, selectedImage, openModal, closeModal } = useGalleryContext();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const imageId = searchParams.get('image');
+  const navigate = useNavigate();
 
-const [selectedImage, setSelectedImage] = useState<{ src: string; title: string; id?: string } | null>(null);
+  useEffect(() => {
+    setImages(galleryImages); // Load once
+  }, []);
 
-// ✅ Open modal from URL param (e.g. /gallery?image=123)
-useEffect(() => {
-  if (imageId && !selectedImage) {
-    const foundImage = images.find((img) => img.id === imageId);
-    if (foundImage) {
-      setSelectedImage(foundImage);
-      document.body.style.overflow = "hidden";
+  useEffect(() => {
+    if (imageId && images.length > 0) {
+      const found = images.find((img) => img.id === imageId);
+      if (found) openModal(found);
     }
-  }
-}, [imageId, selectedImage, images]);
+  }, [imageId, images]);
 
-// ✅ Open modal from click (Achievements)
-const openModal = (image: { src: string; title: string; id?: string }) => {
-  setSelectedImage(image);
-  document.body.style.overflow = "hidden";
-  if (image.id) {
-    setSearchParams({ image: image.id }); // optional — skip if you don't want URL change
-  }
-};
+  // Add a new function to handle modal closing
+  const handleCloseModal = () => {
+    closeModal();
+    // Remove the image parameter from URL when closing the modal
+    if (imageId) {
+      navigate('/gallery', { replace: true });
+    }
+  };
 
-// ✅ Close modal (removes param and resets scroll)
-const closeModal = () => {
-  setSelectedImage(null);
-  document.body.style.overflow = "";
-  setSearchParams({}); // clears ?image=...
-};
 
   return (
     <div className="min-h-screen flex flex-col bg-background-secondary">
@@ -200,7 +62,7 @@ const closeModal = () => {
               <div
                 key={idx}
                 className="relative rounded-2xl overflow-hidden shadow-lg group border border-card-border bg-card mb-6 cursor-pointer"
-                onClick={() => openModal(img)} 
+                onClick={() => openModal(img)}
               >
                 <img
                   src={img.src}
@@ -209,7 +71,9 @@ const closeModal = () => {
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm flex items-end">
                   <div className="w-full p-4">
-                    <div className="text-white text-lg font-semibold">{img.title}</div>
+                    <div className="text-white text-lg font-semibold">
+                      {img.title}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -219,28 +83,29 @@ const closeModal = () => {
       </main>
       <Footer />
 
-    
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-80 backdrop-blur-sm"
-          onClick={closeModal} 
+          onClick={handleCloseModal}
         >
           <div
-            className="relative bg-background-secondary rounded-lg p-4 shadow-2xl max-w-full lg:max-w-4xl max-h-[90vh] flex flex-col"
+            className="relative bg-background-secondary rounded-lg p-4 shadow-2xl max-w-full lg:max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={closeModal}
+              onClick={handleCloseModal}
               className="absolute m-5 top-3 right-3 text-white hover:text-gray-300 transition-colors duration-200 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70"
               aria-label="Close image"
             >
               <X size={24} />
             </button>
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.title}
-              className="max-w-full max-h-full object-contain rounded-md"
-            />
+            <div className="flex-1 overflow-hidden flex items-center justify-center">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.title}
+                className="max-w-full max-h-[75vh] object-contain rounded-md"
+              />
+            </div>
             <div className="mt-4 text-center text-foreground-secondary text-lg font-semibold">
               {selectedImage.title}
             </div>

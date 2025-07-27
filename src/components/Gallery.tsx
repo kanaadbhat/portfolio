@@ -1,14 +1,10 @@
 import React from 'react';
-
-const images = [
-  {
-    src: '/public/profile-image.jpg',
-    title: 'Profile Pic',
-    date: '2024-07-01',
-  },
-];
+import { useGalleryContext } from "@/components/GalleryContext";
+import galleryImages from "@/data/galleryImages";
 
 const Gallery: React.FC = () => {
+  const { openModal } = useGalleryContext();
+  
   return (
     <section id="gallery" className="py-20 bg-background-secondary">
       <div className="container mx-auto px-6">
@@ -24,11 +20,12 @@ const Gallery: React.FC = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {images.map((img, idx) => (
+          {galleryImages.map((img, idx) => (
             <div
               key={idx}
-              className="relative rounded-2xl overflow-hidden shadow-lg group border border-card-border bg-card"
+              className="relative rounded-2xl overflow-hidden shadow-lg group border border-card-border bg-card cursor-pointer"
               style={{ aspectRatio: '4/3' }}
+              onClick={() => openModal(img)}
             >
               <img
                 src={img.src}
@@ -38,7 +35,6 @@ const Gallery: React.FC = () => {
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm flex items-end">
                 <div className="w-full p-4">
                   <div className="text-white text-lg font-semibold">{img.title}</div>
-                  <div className="text-white text-xs mt-1">{img.date}</div>
                 </div>
               </div>
             </div>
@@ -49,4 +45,4 @@ const Gallery: React.FC = () => {
   );
 };
 
-export default Gallery; 
+export default Gallery;
