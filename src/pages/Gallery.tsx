@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useGalleryContext } from "@/components/GalleryContext";
 import galleryImages from "@/data/galleryImages";
+import { Helmet } from 'react-helmet-async';
 
 const breakpointColumnsObj = {
   default: 4,
@@ -43,6 +44,16 @@ const GalleryPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background-secondary">
+      <Helmet>
+        <title>Gallery | Kanaad Bhat</title>
+        <meta name="description" content="Explore a visual collection of moments, projects, and memories from Kanaad Bhat's professional journey and achievements." />
+        <meta name="keywords" content="Kanaad Bhat gallery, portfolio gallery, project images, achievements, awards" />
+        <link rel="canonical" href="https://kanaad.in/gallery" />
+        <meta property="og:title" content="Gallery | Kanaad Bhat" />
+        <meta property="og:description" content="Explore a visual collection of moments, projects, and memories from Kanaad Bhat's professional journey." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kanaad.in/gallery" />
+      </Helmet>
       <Header />
       <main id="main-content" className="flex-1">
         <div className="container mx-auto px-6 py-20">
