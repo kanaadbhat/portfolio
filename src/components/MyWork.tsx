@@ -6,10 +6,10 @@ import apex from "@/assets/apex.jpeg";
 const MyWork = () => {
   const projects = [
     {
-      title: "Vendora - AI Vendor Assistant",
+      title:  "Vendora – Smart Vendor Management Platform",
       duration: "FEB-JUNE 2025",
       description:
-        "Built an AI assistant using Gemini Pro to manage daily consumables and subscriptions via natural language queries, with RESTful backend APIs and Razorpay Payment Gateway Integration.",
+        "Designed and developed a comprehensive vendor management platform enabling users to manage products, track subscriptions, and handle payments. Integrated Gemini Pro for intelligent query handling and assistance. Features include product catalog management, Razorpay-powered transactions, and secure RESTful APIs.",
       tech: [
         "Flutter",
         "Express.js",

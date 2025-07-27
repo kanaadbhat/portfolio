@@ -1,11 +1,17 @@
-import { Briefcase, MapPin, Calendar, ExternalLink } from 'lucide-react';
+import {
+  Briefcase,
+  MapPin,
+  Calendar,
+  ExternalLink,
+  FileUser,
+} from "lucide-react";
 
 const Experience = () => {
   const experience = {
     organization: "Inew Technologies, Pune",
     role: "Full Stack Developer (Internship)",
-    mode: "Online",
-    duration: "27 June 2025 – 27 Sept 2025"
+    mode: "Remote",
+    duration: "27 June 2025 – 27 Sept 2025",
   };
 
   return (
@@ -16,7 +22,8 @@ const Experience = () => {
             Work <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-foreground-secondary text-lg max-w-2xl mx-auto">
-            Professional experience and internships that shaped my development journey
+            Professional experience and internships that shaped my development
+            journey
           </p>
         </div>
 
@@ -36,7 +43,7 @@ const Experience = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 text-sm">
                 <div className="flex items-center text-foreground-secondary">
                   <Calendar size={16} className="mr-2" />
@@ -51,15 +58,21 @@ const Experience = () => {
 
             <div className="space-y-6">
               <div>
-                <h4 className="text-lg font-semibold text-foreground mb-3">Key Responsibilities & Learning:</h4>
+                <h4 className="text-lg font-semibold text-foreground mb-3">
+                  Key Responsibilities & Learning:
+                </h4>
                 <ul className="space-y-3 text-foreground-secondary">
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span>Full-stack development using modern web technologies</span>
+                    <span>
+                      Full-stack development using modern web technologies
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span>Collaborative development in an agile environment</span>
+                    <span>
+                      Collaborative development in an agile environment
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -73,13 +86,34 @@ const Experience = () => {
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <span>Database design and optimization</span>
                   </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span> Building ERP Products</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span>
+                      Currently working on enterprise resource planning systems
+                      for Siddharth Starch Pvt. Ltd.
+                    </span>
+                  </li>
                 </ul>
               </div>
 
               <div className="bg-background-secondary rounded-xl p-6">
-                <h4 className="text-lg font-semibold text-foreground mb-3">Technologies Used:</h4>
+                <h4 className="text-lg font-semibold text-foreground mb-3">
+                  Technologies Used:
+                </h4>
                 <div className="flex flex-wrap gap-2">
-                  {["React.js", "Node.js", "Express.js", "MySQL", "TypeScript", "RESTful APIs", "Git"].map((tech, index) => (
+                  {[
+                    "React.js",
+                    "Node.js",
+                    "Express.js",
+                    "MySQL",
+                    "TypeScript",
+                    "RESTful APIs",
+                    "Git",
+                  ].map((tech, index) => (
                     <span
                       key={index}
                       className="bg-background text-foreground-secondary px-3 py-1 rounded-full text-sm border border-card-border"
@@ -97,29 +131,53 @@ const Experience = () => {
             <h3 className="text-2xl font-bold text-foreground mb-8">
               Open to New Opportunities
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-4 gap-6">
               <div className="glass-card rounded-xl p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Briefcase size={24} className="text-primary-foreground" />
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">Full-time Roles</h4>
-                <p className="text-foreground-secondary text-sm">Looking for full-stack developer positions</p>
+                <h4 className="font-semibold text-foreground mb-2">
+                  Full-time Roles
+                </h4>
+                <p className="text-foreground-secondary text-sm">
+                  Looking for full-stack developer positions
+                </p>
               </div>
-              
+
               <div className="glass-card rounded-xl p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <ExternalLink size={24} className="text-primary-foreground" />
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">Remote Work</h4>
-                <p className="text-foreground-secondary text-sm">Available for remote and hybrid opportunities</p>
+                <h4 className="font-semibold text-foreground mb-2">
+                  Remote Work
+                </h4>
+                <p className="text-foreground-secondary text-sm">
+                  Available for remote and hybrid opportunities
+                </p>
               </div>
-              
+
+              <div className="glass-card rounded-xl p-6 text-center">
+                <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FileUser size={24} className="text-primary-foreground" />
+                </div>
+                <h4 className="font-semibold text-foreground mb-2">
+                  Internship
+                </h4>
+                <p className="text-foreground-secondary text-sm">
+                  Available for onsite internship from Jan-Jun 2026
+                </p>
+              </div>
+
               <div className="glass-card rounded-xl p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Calendar size={24} className="text-primary-foreground" />
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">Available</h4>
-                <p className="text-foreground-secondary text-sm">Ready to start immediately after graduation</p>
+                <h4 className="font-semibold text-foreground mb-2">
+                  Available
+                </h4>
+                <p className="text-foreground-secondary text-sm">
+                  Ready to start immediately after graduation
+                </p>
               </div>
             </div>
           </div>

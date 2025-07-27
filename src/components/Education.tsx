@@ -12,7 +12,6 @@ const education = [
     qualification: 'HSC (12th)',
     institution: 'Deep Junior College, Boisar',
     year: '2021-2022',
-    percentage: '67.00%',
     mht_cet: '92.55%',
   },
   {

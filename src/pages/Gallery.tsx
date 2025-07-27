@@ -1,9 +1,11 @@
-import React , { useState }from 'react';
+import React , { useState, useEffect }from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { useNavigate} from 'react-router-dom'; // Keep if you use navigate elsewhere
-import Masonry from 'react-masonry-css'; // Import the Masonry component
+import { useNavigate} from 'react-router-dom'; 
+import Masonry from 'react-masonry-css'; 
 import { X } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+
 
 //images
 import apex_award from '@/assets/apex_award.jpeg';
@@ -30,91 +32,111 @@ import msp_post from '@/assets/msp_post.jpg';
 
 const images = [
   {
+    id: apex_award,
     src: apex_award,
     title: 'PBL Competition Award Ceremony - Apex',
   },
   {
+    id: buildguild_award,
     src: buildguild_award,
     title: 'PBL Competition Award Ceremony - buildguild',
   },
   {
+    id: equinox_award,
     src: equinox_award,
     title: 'Equinox Web Battles Award Ceremony',
   },
   {
+    id: iot,
     src: iot,
     title: 'IoT Project of Smart Water management System',
   },
   {
+    id: iot_award,
     src: iot_award,
     title: 'PBL Competition Award Ceremony - Smart Water Management system',
   },
   {
+    id: iste_committee,
     src: iste_committee,
     title: 'ISTE Core Committee Installation Ceremony',
   },
   {
+    id: msp_award,
     src: msp_award,
     title: "Master student's Program Award Ceremony",
   },
   {
+    id: msp_group,
     src: msp_group,
     title: 'MSP 2024 Speakers',
   },
   {
+    id: msp_moment_1,
     src: msp_moment_1,
     title: 'MSP Clicks',
   },
   {
+    id: msp_moment_2,
     src: msp_moment_2,
     title: 'MSP Clicks',
   },
   {
+    id: msp_trophy,
     src: msp_trophy,
     title: 'MSP 2024 Trophy',
   },
   {
+    id: rotaract,
     src: rotaract,
     title: 'RAC NNH Appreciation Certificate',
   },
   {
+    id: neuron_host,
     src: neuron_host,
     title: 'Round Host for Neuron Quiz Competition',
   },
   {
+    id: rotaract_installation,
     src: rotaract_installation,
     title: 'RAC NNH Installation Ceremony',
   },
   {
+    id: engg_explo,
     src: engg_explo,
     title: 'First Year Engineering Exploration project',
   },
   {
+    id: equinox_trophy,
     src: equinox_trophy,
     title: 'Equinox Web Battles Trophy',
   },
   {
+    id: cybersecurity,
     src: cybersecurity,
     title: 'Anchoring at Cybersecurity Awareness session',
   },
   {
+    id: poster_anchors,
     src: poster_anchors,
     title: 'Anchoring at Poster Making Competition, ISTE',
   },
   {
+    id: poster_making,
     src: poster_making,
     title: 'Anchoring at Poster Making Competition, ISTE',
   },
   {
+    id: hype_reel,
     src: hype_reel,
     title: 'Hype Reel for MSP 2025 featured at College Lobby Screens',
   },
   {
+    id: msp_post,
     src: msp_post,
     title: 'MSP 2024 Speaker Post',
   }
 ];
-
 
 const breakpointColumnsObj = {
   default: 4, 
@@ -124,18 +146,38 @@ const breakpointColumnsObj = {
 };
 
 const GalleryPage: React.FC = () => {
-  const navigate = useNavigate();
-  const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
+ const navigate = useNavigate();
+const [searchParams, setSearchParams] = useSearchParams();
+const imageId = searchParams.get("image");
 
-  const openModal = (image: { src: string; title: string }) => {
-    setSelectedImage(image);
-    document.body.style.overflow = 'hidden'; 
-  };
+const [selectedImage, setSelectedImage] = useState<{ src: string; title: string; id?: string } | null>(null);
 
-  const closeModal = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = ''; 
-  };
+// ✅ Open modal from URL param (e.g. /gallery?image=123)
+useEffect(() => {
+  if (imageId && !selectedImage) {
+    const foundImage = images.find((img) => img.id === imageId);
+    if (foundImage) {
+      setSelectedImage(foundImage);
+      document.body.style.overflow = "hidden";
+    }
+  }
+}, [imageId, selectedImage, images]);
+
+// ✅ Open modal from click (Achievements)
+const openModal = (image: { src: string; title: string; id?: string }) => {
+  setSelectedImage(image);
+  document.body.style.overflow = "hidden";
+  if (image.id) {
+    setSearchParams({ image: image.id }); // optional — skip if you don't want URL change
+  }
+};
+
+// ✅ Close modal (removes param and resets scroll)
+const closeModal = () => {
+  setSelectedImage(null);
+  document.body.style.overflow = "";
+  setSearchParams({}); // clears ?image=...
+};
 
   return (
     <div className="min-h-screen flex flex-col bg-background-secondary">
