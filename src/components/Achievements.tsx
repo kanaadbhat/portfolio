@@ -2,6 +2,7 @@ import { Trophy, Award, Medal, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useGalleryContext } from "@/components/GalleryContext";
 import { useNavigate } from "react-router-dom";
+import achievements from "@/data/achievements";
 import galleryImages from "@/data/galleryImages";
 
 const Achievements = () => {
@@ -12,46 +13,9 @@ const Achievements = () => {
     const image = galleryImages.find((img) => img.id === imageId);
     if (image) {
       navigate(`/gallery?image=${image.id}`);
+      setTimeout(() => openModal(image), 0);
     }
   };
-
-  const achievements = [
-    {
-      year: 2023,
-      rank: "Finalist",
-      title: "IOT based Smart Parking system",
-      competition: "Engineering Exploration",
-      imageId: "engg-explo",
-    },
-    {
-      year: 2024,
-      rank: "1st",
-      title: "Apex - Housing Society Management System",
-      competition: "PBL",
-      imageId: "apex_award",
-    },
-    {
-      year: 2024,
-      rank: "3rd",
-      title: "buildguild - A Construction Management Tool",
-      competition: "DBMS",
-      imageId: "buildguild_award",
-    },
-    {
-      year: 2024,
-      rank: "1st",
-      title: "Smart Water Management System",
-      competition: "IOT",
-      imageId: "iot",
-    },
-    {
-      year: 2024,
-      rank: "3rd",
-      title: "Web Battles Coding Round",
-      competition: "Equinox",
-      imageId: "equinox_award",
-    },
-  ];
 
   const getRankIcon = (rank: string) => {
     switch (rank) {

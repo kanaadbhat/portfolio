@@ -32,10 +32,8 @@ const GalleryPage: React.FC = () => {
     }
   }, [imageId, images]);
 
-  // Add a new function to handle modal closing
   const handleCloseModal = () => {
     closeModal();
-    // Remove the image parameter from URL when closing the modal
     if (imageId) {
       navigate('/gallery', { replace: true });
     }

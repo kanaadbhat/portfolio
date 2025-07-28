@@ -5,15 +5,9 @@ import {
   ExternalLink,
   FileUser,
 } from "lucide-react";
+import experience from "@/data/experience";
 
 const Experience = () => {
-  const experience = {
-    organization: "Inew Technologies, Pune",
-    role: "Full Stack Developer (Internship)",
-    mode: "Remote",
-    duration: "27 June 2025 – 27 Sept 2025",
-  };
-
   return (
     <section id="experience" className="py-20 bg-background">
       <div className="container mx-auto px-6">

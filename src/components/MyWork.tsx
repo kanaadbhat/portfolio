@@ -1,60 +1,8 @@
 import { ExternalLink, Github } from "lucide-react";
-import vendora from "@/assets/vendora.jpeg";
-import buildguild from "@/assets/buildguild.jpeg";
-import apex from "@/assets/apex.jpeg";
+import projects from "@/data/projects";
 
 const MyWork = () => {
-  const projects = [
-    {
-      title:  "Vendora – Smart Vendor Management Platform",
-      duration: "FEB-JUNE 2025",
-      description:
-        "Designed and developed a comprehensive vendor management platform enabling users to manage products, track subscriptions, and handle payments. Integrated Gemini Pro for intelligent query handling and assistance. Features include product catalog management, Razorpay-powered transactions, and secure RESTful APIs.",
-      tech: [
-        "Flutter",
-        "Express.js",
-        "Gemini AI",
-        "RESTful APIs",
-        "Riverpod",
-        "MongoDB",
-        "JWT",
-      ],
-      github: "https://github.com/kanaadbhat/Vendora",
-      live: "https://vendora-frontend.onrender.com/",
-      featured: true,
-      image: vendora,
-    },
-    {
-      title: "buildguild - A Construction Management Tool",
-      duration: "AUG-DEC 2024",
-      description:
-        "A unified construction project management platform featuring modules for progress, financials, materials, and workflows with Clerk authentication in MERN stack.",
-      tech: [
-        "React.js",
-        "Node.js",
-        "MongoDB",
-        "Express.js",
-        "Clerk Auth",
-        "ShadCN UI",
-      ],
-      github: "https://github.com/kanaadbhat/buildguild",
-      live: "https://buildguild-pro.onrender.com/",
-      featured: true,
-      image: buildguild,
-    },
-    {
-      title: "Apex - Housing Society Management System",
-      duration: "FEB-MAY 2024",
-      description:
-        "A housing management system with multi-user login support for chairman, security, and users to manage society tasks.",
-      tech: ["HTML", "Firebase", "JavaScript", "CSS3", "Multi-user Auth"],
-      github: "https://github.com/kanaadbhat/apex-webdev",
-      live: "https://apex-webdev.web.app/",
-      featured: false,
-      image: apex,
-    },
-  ];
-
+  
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -124,13 +72,23 @@ const MyWork = () => {
                   >
                     Code
                   </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg hover:bg-secondary-hover transition-colors duration-300"
+                    >
+                      Demo
+                    </a>
+                  )}
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-lg hover-glow transition-all duration-300"
                   >
-                    Live Demo
+                    Live
                   </a>
                 </div>
               </div>
