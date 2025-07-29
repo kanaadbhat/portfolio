@@ -3,13 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const navigate = useNavigate();
-  // const stats = [
-  //   { label: 'CGPA', value: '8.02' },
-  //   { label: 'Projects', value: '15+' },
-  //   { label: 'Certifications', value: '4+' },
-  //   { label: 'Awards', value: '5+' },
-  // ];
-
   return (
     <section id="about" className="py-20 bg-background-secondary">
       <div className="container mx-auto px-6">
@@ -27,7 +20,7 @@ const Profile = () => {
           </p>
         </div>
 
-        <div className="flex gap-12 items-center">
+       <div className="flex flex-col lg:flex-row gap-12 items-center">
           <div className="text-center lg:text-left animate-fade-in-up">
             <div className="relative w-96 mx-auto lg:mx-0">
               <img
