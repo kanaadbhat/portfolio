@@ -1,6 +1,7 @@
 import vendora from "@/assets/vendora.jpeg";
 import buildguild from "@/assets/buildguild.jpeg";
 import apex from "@/assets/apex.jpeg";
+import SpendSmart from "@/assets/SpendSmart.png";
 
 const projects = [
   {
@@ -22,6 +23,26 @@ const projects = [
     demo: "https://youtu.be/Gg3fWcJeheI",
     featured: true,
     image: vendora,
+  },
+  {
+    title: "SpendSmart – Personal Finance & Expense Tracker",
+    duration: "AUGUST 2025",
+    description:
+      "Built a modern personal finance management web app for tracking expenses, managing categories, and visualizing spending trends. Features include interactive dashboards with charts, category-wise analytics, and CRUD operations for expenses and categories. Supports user-friendly UI with Bootstrap, secure data handling, and real-time statistics.",
+    tech: [
+      "ASP.NET Core MVC",
+      "Entity Framework Core",
+      "SQL Server",
+      "C#",
+      "Chart.js",
+      "Bootstrap",
+      "Razor Pages",
+      ".NET 9"
+    ],
+    github: "https://github.com/kanaadbhat/SpendSmart",
+    demo: "https://youtu.be/uM16WD-ProE",
+    featured: false,
+    image: SpendSmart,
   },
   {
     title: "buildguild - A Construction Management Tool",

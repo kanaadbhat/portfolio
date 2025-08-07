@@ -77,19 +77,21 @@ const MyWork = () => {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg hover:bg-secondary-hover transition-colors duration-300"
+                      className="flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg hover:bg-secondary-hover transition-colors duration-300"
                     >
                       Demo
                     </a>
                   )}
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-lg hover-glow transition-all duration-300"
-                  >
-                    Live
-                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-lg hover-glow transition-all duration-300"
+                    >
+                      Live
+                    </a>
+                  )}
                 </div>
               </div>
 
