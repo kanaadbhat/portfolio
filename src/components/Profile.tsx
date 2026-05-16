@@ -55,7 +55,7 @@ const Profile = () => {
               with diverse teams, and bring solid interpersonal and time
               management skills to meet organizational goals. My experience
               spans across full-stack development, with particular expertise in
-              React.js, Express.js, Flutter and modern web technologies.
+              React.js, Express.js and modern web technologies.
             </p>
 
             <div className="space-y-4">

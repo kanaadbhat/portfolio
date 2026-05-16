@@ -3,7 +3,7 @@ const education = [
     degree: 'B.Tech in Computer Engineering',
     institution: 'K.K.Wagh Institute of Engineering Education & Research, Nashik',
     duration: '2022-2026',
-    cgpa: '8.02',
+    cgpa: '8.04',
     board: 'Autonomous – SPPU, Pune',
   },
   {

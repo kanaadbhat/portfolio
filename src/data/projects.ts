@@ -2,8 +2,43 @@ import vendora from "@/assets/vendora.jpeg";
 import buildguild from "@/assets/buildguild.jpeg";
 import apex from "@/assets/apex.jpeg";
 import SpendSmart from "@/assets/SpendSmart.png";
+import calibr from "@/assets/calibr.jpg";
+import drivechat from "@/assets/drivechat.png";
 
 const projects = [
+    {
+    title: "DriveChat - Secure Message Syncing",
+    duration: " DEC 2025",
+    description:
+      "Built a private, cross-device chat workspace with true end-to-end encryption and zero server access to user data.Use event-driven realtime architecture, reducing network requests by 95% and backend load by 90%; implemented smart previews (LCP <1.5s, CLS <0.05, INP <40ms)",
+    tech: [
+   "React", "Node.js", "Express.js", "Dexie.js", "Firestore", "Redis", "Socket.IO", "GIS", "BullMQ", "Web Crypto", "Docker"
+    ],
+    github: "https://github.com/kanaadbhat/drivechat",
+    demo: "https://youtu.be/TQuNNvwbgmU",
+    live: "https://mydrivechat.onrender.com",
+    featured: true,
+    image: drivechat,
+  },
+  {
+    title: "Calibr - AI Recruitment Pipeline",
+    duration: "SEP-NOV 2025",
+    description:
+      "An AI Driven Recruitment platform for comprehensive candidate evakuation. Consisting of different modules like AptitudeTest, Coding Round and Interviews. Engineered an Threshold-Based Multi-Queue System for AI-Driven Interview Orchestration.",
+    tech: [
+      "Next.js",
+      "Shadcn",
+      "MongoDB",
+      "AWS S3/EC2",
+      "GCP",
+      "Gemini Pro",
+      "Judge0",
+    ],
+    github: "https://github.com/kanaadbhat/Calibr",
+    demo: "https://youtu.be/TQuNNvwbgmU",
+    featured: true,
+    image: calibr,
+  },
   {
     title: "Vendora – Smart Vendor Management Platform",
     duration: "FEB-JUNE 2025",
@@ -21,7 +56,7 @@ const projects = [
     github: "https://github.com/kanaadbhat/Vendora",
     live: "https://vendora-frontend.onrender.com/",
     demo: "https://youtu.be/Gg3fWcJeheI",
-    featured: true,
+    featured: false,
     image: vendora,
   },
   {
@@ -37,7 +72,7 @@ const projects = [
       "Chart.js",
       "Bootstrap",
       "Razor Pages",
-      ".NET 9"
+      ".NET 9",
     ],
     github: "https://github.com/kanaadbhat/SpendSmart",
     demo: "https://youtu.be/uM16WD-ProE",
