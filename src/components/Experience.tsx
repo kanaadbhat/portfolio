@@ -46,16 +46,37 @@ const Experience = () => {
                         <div className="glass-card rounded-2xl p-6 hover-glow transition-all duration-500 animate-fade-in-up md:hover:scale-[1.02] bg-card hover:bg-card/80">
                           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 gap-4">
                             <div className="flex items-center">
-                              <div className="p-3 bg-gradient-primary rounded-xl mr-4 flex-shrink-0">
-                                <Briefcase size={22} className="text-primary-foreground" />
+                              <div className="p-1 bg-white rounded-xl mr-4 flex-shrink-0 w-14 h-14 flex items-center justify-center border border-card-border overflow-hidden">
+                                {exp.logo ? (
+                                  <img 
+                                    src={exp.logo} 
+                                    alt={`${exp.organization} logo`} 
+                                    className="w-full h-full object-contain"
+                                  />
+                                ) : (
+                                  <Briefcase size={22} className="text-primary" />
+                                )}
                               </div>
                               <div className="text-left">
                                 <h3 className="text-xl font-bold text-foreground leading-tight mb-1">
                                   {exp.role}
                                 </h3>
-                                <p className="text-base text-primary font-semibold">
-                                  {exp.organization}
-                                </p>
+                                <div className="flex items-center gap-2">
+                                  <p className="text-base text-primary font-semibold">
+                                    {exp.organization}
+                                  </p>
+                                  {exp.website && (
+                                    <a 
+                                      href={exp.website} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="text-foreground-secondary hover:text-primary transition-colors"
+                                      title="Visit website"
+                                    >
+                                      <ExternalLink size={14} />
+                                    </a>
+                                  )}
+                                </div>
                               </div>
                             </div>
 
@@ -133,7 +154,7 @@ const Experience = () => {
                 Full-time Roles
               </h4>
               <p className="text-foreground-secondary text-sm">
-                Looking for full-stack developer positions
+                Looking for full-stack developer / DevOps Engineer positions
               </p>
             </div>
 
@@ -180,4 +201,3 @@ const Experience = () => {
 };
 
 export default Experience;
-

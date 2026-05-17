@@ -11,7 +11,7 @@ const skillCategories = [
     {
       title: "Full Stack Development", 
       icon: Code,
-      skills: ["Node.js", "Express.js", "RESTful APIs", "Authentication Systems","Backend Architecture","TypeScript"],
+      skills: ["Node.js", "Express.js", "RESTful APIs","Next.js", "Authentication Systems","Backend Architecture","TypeScript"],
       color: "text-green-400"
     },
     {
@@ -46,7 +46,7 @@ const skillCategories = [
     {
       title: "Programming Languages",
       icon: Brain,
-      skills: ["C", "C++", "Python", "JavaScript","TypeScript", "Dart"],
+      skills: ["C", "C++", "Python", "JavaScript","TypeScript"],
       color: "text-pink-400"
     }
   ];

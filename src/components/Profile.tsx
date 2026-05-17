@@ -16,8 +16,7 @@ const Profile = () => {
               About <span className="text-gradient">Me</span>
             </h2>
             <p className="text-foreground-secondary text-lg max-w-2xl mx-auto">
-                Full Stack Developer & DevOps Engineer focusing on building
-                scalable, maintainable web platforms and cloud infrastructure.
+              Building software that reaches people, solves problems, and scales.
               </p>
           </div>
 
@@ -40,27 +39,19 @@ const Profile = () => {
             style={{ animationDelay: "0.2s" }}
           >
             <h3 className="text-2xl font-bold text-foreground">
-              Engineering Summary
+              Driven by Human Impact
             </h3>
 
             <p className="text-foreground-secondary leading-relaxed">
-              I design and build full stack applications with an emphasis on
-              clean architecture, reliable APIs, and observable infrastructure.
-              My work covers backend services, frontend integration, and the
-              operational processes that keep services running smoothly.
+             I don’t just build software for the sake of writing code; I build for the people who use it. My ultimate motivation is watching a product move from a local development environment into the hands of real users, making their lives easier and solving actual problems. That feedback loop is what drives everything I do.
             </p>
 
             <p className="text-foreground-secondary leading-relaxed">
-              Practically, I implement containerized delivery pipelines,
-              infrastructure-as-code, and automated deployment flows. I focus
-              on observability, incident response, and reducing operational
-              toil through automation and testing.
+              Because I want the things I build to truly succeed in the wild, I’ve shaped my skills to handle the entire lifecycle of a product. I bridge the gap between full-stack engineering and DevOps so that good ideas don't just get built—they get launched safely, perform flawlessly, and scale seamlessly under real-world traffic.
             </p>
 
             <p className="text-foreground-secondary leading-relaxed">
-              I collaborate closely with cross-functional teams to translate
-              product requirements into scalable technical solutions and
-              prioritize maintainability, security, and performance.
+             For me, success means eliminating technical friction, automating repetitive toil, and collaborating with cross-functional teams to ship reliable, high-impact platforms that last.
             </p>
 
             <div className="space-y-4">
