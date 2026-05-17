@@ -35,7 +35,7 @@ const Footer = () => {
               Kanaad Hemant Bhat
             </h3>
             <p className="text-foreground-secondary">
-              Full Stack Developer • Problem Solver • Technology Enthusiast
+              Full Stack Developer & DevOps Engineer • Cloud & Infrastructure
             </p>
           </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
 
           <div className="border-t border-card-border pt-8">
             <p className="text-foreground-secondary text-sm">
-              © {currentYear} Kanaad Bhat. All rights reserved. Built with React & Tailwind CSS.
+              © {currentYear} Kanaad Bhat. All rights reserved.
             </p>
             <div className="mt-2 flex justify-center">
               <span className="inline-block bg-gradient-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold shadow-sm">KB</span>

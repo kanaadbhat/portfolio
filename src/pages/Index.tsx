@@ -10,11 +10,11 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Kanaad Bhat | Full Stack Developer</title>
+        <title>Kanaad Bhat</title>
         <meta name="description" content="Full Stack Developer passionate about building innovative applications and solving real-world challenges. Explore my skills, experience, and education." />
-        <meta name="keywords" content="Kanaad Bhat, Full Stack Developer, Web Development, Portfolio, Software Engineer" />
+        <meta name="keywords" content="Kanaad Bhat, Full Stack Developer,DevOps Engineer, Web Development, Portfolio, Software Engineer" />
         <link rel="canonical" href="https://kanaad.in/" />
-        <meta property="og:title" content="Kanaad Bhat | Full Stack Developer" />
+        <meta property="og:title" content="Kanaad Bhat | Full Stack Developer | DevOps Engineer" />
         <meta property="og:description" content="Full Stack Developer passionate about building innovative applications and solving real-world challenges." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://kanaad.in/" />

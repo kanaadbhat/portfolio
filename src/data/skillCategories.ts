@@ -1,36 +1,47 @@
-import { Code, Smartphone, Database, Globe, Wrench, Brain } from 'lucide-react';
+import { Code, Database, Globe, Wrench, Brain } from 'lucide-react';
 
 
 const skillCategories = [
     {
       title: "Frontend Development",
       icon: Globe,
-      skills: ["HTML", "CSS", "React.js", "Tailwind CSS","Next.js","React Query"],
+      skills: ["HTML", "CSS", "React.js", "Tailwind CSS","Next.js","React Query","Zustand"],
       color: "text-blue-400"
     },
     {
-      title: "Backend Development", 
+      title: "Full Stack Development", 
       icon: Code,
-      skills: ["Node.js", "Express.js", "RESTful APIs", "Authentication","Next.js","Zustand","Redux-Toolkit"],
+      skills: ["Node.js", "Express.js", "RESTful APIs", "Authentication Systems","Backend Architecture","TypeScript"],
       color: "text-green-400"
-    },
-    {
-      title: "Mobile Development",
-      icon: Smartphone,
-      skills: ["Flutter", "Dart", "RiverPod"],
-      color: "text-purple-400"
     },
     {
       title: "Databases",
       icon: Database,
-      skills: ["MySQL", "MongoDB",  "PostgreSQL","Firebase", "Sequelize"],
+      skills: ["PostgreSQL", "MongoDB", "MySQL", "Firebase"],
       color: "text-orange-400"
     },
     {
       title: "Tools & Technologies",
       icon: Wrench,
-      skills: ["Git", "GitHub", "Postman", "Thunder Client", "Render", "Cloudinary", "Power BI", "Figma","SQL Workbench","PgAdmin"],
+      skills: ["Git", "GitHub", "VS Code", "Postman", "SSH", "Docker", "Docker Compose", "CI/CD Concepts", "Zustand", "React Query"],
       color: "text-cyan-400"
+    },
+    {
+      title: "Cloud & DevOps",
+      icon: Globe,
+      skills: [
+        "AWS Infrastructure",
+        "Docker",
+        "Docker Compose",
+        "Terraform",
+        "Nginx",
+        "Linux",
+        "SSL Configuration",
+        "VPN Setup",
+        "Infrastructure as Code",
+        "Deployment Automation",
+      ],
+      color: "text-sky-400",
     },
     {
       title: "Programming Languages",

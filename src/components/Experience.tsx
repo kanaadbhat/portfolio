@@ -21,131 +21,156 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-      <div className="max-w-4xl mx-auto space-y-10">
-  {experience.map((exp, index) => (
-    <div
-      key={index}
-      className="glass-card rounded-2xl p-8 hover-glow transition-all duration-500 animate-fade-in-up"
-    >
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-        <div className="flex items-center mb-4 lg:mb-0">
-          <div className="p-4 bg-gradient-primary rounded-xl mr-6">
-            <Briefcase size={28} className="text-primary-foreground" />
+        <div className="max-w-6xl mx-auto">
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-[20px] md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-card-border"></div>
+            
+            <div className="space-y-12">
+              {experience.slice().reverse().map((exp, index) => {
+                const isLeft = index % 2 === 0;
+                
+                return (
+                  <div key={index} className="relative flex flex-col md:flex-row items-center w-full">
+                    
+                    {/* Desktop Timeline Dot */}
+                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-8 items-center justify-center w-6 h-6 rounded-full bg-background border-2 border-primary z-10 shadow-lg"></div>
+                    
+                    {/* Mobile Timeline Dot */}
+                    <div className="md:hidden absolute left-[20px] -translate-x-[4px] top-8 w-2.5 h-2.5 rounded-full bg-primary shadow-md z-10"></div>
+
+                    <div className={`w-full flex flex-col md:flex-row items-center gap-4 md:gap-8 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}>
+                      
+                      {/* Card Column */}
+                      <div className="w-full md:w-[48%] pl-12 md:pl-0 z-10">
+                        <div className="glass-card rounded-2xl p-6 hover-glow transition-all duration-500 animate-fade-in-up md:hover:scale-[1.02] bg-card hover:bg-card/80">
+                          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 gap-4">
+                            <div className="flex items-center">
+                              <div className="p-3 bg-gradient-primary rounded-xl mr-4 flex-shrink-0">
+                                <Briefcase size={22} className="text-primary-foreground" />
+                              </div>
+                              <div className="text-left">
+                                <h3 className="text-xl font-bold text-foreground leading-tight mb-1">
+                                  {exp.role}
+                                </h3>
+                                <p className="text-base text-primary font-semibold">
+                                  {exp.organization}
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="flex flex-col gap-2 text-sm justify-start md:justify-end text-left sm:text-right">
+                              {/* Date (Mobile Only inside Card) */}
+                              <div className="flex md:hidden items-center text-foreground-secondary bg-background/50 px-3 py-1.5 rounded-lg w-fit">
+                                <Calendar size={14} className="mr-2" />
+                                {exp.duration}
+                              </div>
+                              <div className="flex items-center text-foreground-secondary bg-background/50 px-3 py-1.5 rounded-lg w-fit">
+                                <MapPin size={14} className="mr-2" />
+                                {exp.mode}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="space-y-3 mt-6">
+                            <h4 className="text-sm font-semibold text-foreground tracking-wider uppercase">
+                              Highlights
+                            </h4>
+                            <ul className="text-foreground-secondary flex flex-col gap-2.5 text-left">
+                              {exp.responsibilities.map((item, i) => (
+                                <li key={i} className="flex items-start bg-background/30 p-2.5 rounded-lg hover:bg-background/50 transition-colors">
+                                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 mr-3 shadow-[0_0_8px_rgba(var(--primary),0.8)]"></div>
+                                  <span className="leading-snug">{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="mt-6 pt-4 border-t border-card-border">
+                            <div className="flex flex-wrap gap-2 justify-start">
+                              {exp.technologies.map((tech, i) => (
+                                <span
+                                  key={i}
+                                  className="bg-background text-foreground-secondary px-3 py-1.5 rounded-full text-xs font-medium border border-card-border hover:border-primary/50 hover:text-primary transition-colors cursor-default"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Empty Column / Date Column (Desktop Only outside Card) */}
+                      <div className={`hidden md:flex w-[48%] items-center ${isLeft ? "justify-start" : "justify-end"}`}>
+                        <div className="text-primary font-medium text-lg flex items-center bg-card/50 px-6 py-3 rounded-full border border-primary/20 shadow-sm">
+                          <Calendar size={18} className="mr-3 text-foreground-secondary" />
+                          {exp.duration}
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div>
+        </div>
+
+        {/* Additional Experience Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-foreground">
-              {exp.role}
-            </h3>
-            <p className="text-xl text-primary font-semibold">
-              {exp.organization}
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4 text-sm">
-          <div className="flex items-center text-foreground-secondary">
-            <Calendar size={16} className="mr-2" />
-            {exp.duration}
-          </div>
-          <div className="flex items-center text-foreground-secondary">
-            <MapPin size={16} className="mr-2" />
-            {exp.mode}
-          </div>
-        </div>
-      </div>
-
-      <div className="space-y-6">
-        {/* Responsibilities */}
-        <div>
-          <h4 className="text-lg font-semibold text-foreground mb-3">
-            Key Responsibilities & Learning:
-          </h4>
-          <ul className="space-y-3 text-foreground-secondary">
-            {exp.responsibilities.map((item, i) => (
-              <li key={i} className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Technologies */}
-        <div className="bg-background-secondary rounded-xl p-6">
-          <h4 className="text-lg font-semibold text-foreground mb-3">
-            Technologies Used:
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {exp.technologies.map((tech, i) => (
-              <span
-                key={i}
-                className="bg-background text-foreground-secondary px-3 py-1 rounded-full text-sm border border-card-border"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-          {/* Additional Experience Section */}
-          <div className="mt-12 text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-8">
               Open to New Opportunities
             </h3>
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="glass-card rounded-xl p-6 text-center">
-                <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Briefcase size={24} className="text-primary-foreground" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">
-                  Full-time Roles
-                </h4>
-                <p className="text-foreground-secondary text-sm">
-                  Looking for full-stack developer positions
-                </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="glass-card rounded-xl p-6 text-center">
+              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Briefcase size={24} className="text-primary-foreground" />
               </div>
+              <h4 className="font-semibold text-foreground mb-2">
+                Full-time Roles
+              </h4>
+              <p className="text-foreground-secondary text-sm">
+                Looking for full-stack developer positions
+              </p>
+            </div>
 
-              <div className="glass-card rounded-xl p-6 text-center">
-                <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <ExternalLink size={24} className="text-primary-foreground" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">
-                  Remote Work
-                </h4>
-                <p className="text-foreground-secondary text-sm">
-                  Available for remote and hybrid opportunities
-                </p>
+            <div className="glass-card rounded-xl p-6 text-center">
+              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <ExternalLink size={24} className="text-primary-foreground" />
               </div>
+              <h4 className="font-semibold text-foreground mb-2">
+                Remote Work
+              </h4>
+              <p className="text-foreground-secondary text-sm">
+                Available for remote and hybrid opportunities
+              </p>
+            </div>
 
-              <div className="glass-card rounded-xl p-6 text-center">
-                <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FileUser size={24} className="text-primary-foreground" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">
-                  Job Opportunities
-                </h4>
-                <p className="text-foreground-secondary text-sm">
-                  Available for onsite job opportunities from July 2026
-                </p>
+            <div className="glass-card rounded-xl p-6 text-center">
+              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <FileUser size={24} className="text-primary-foreground" />
               </div>
+              <h4 className="font-semibold text-foreground mb-2">
+                Job Opportunities
+              </h4>
+              <p className="text-foreground-secondary text-sm">
+                Available for onsite job opportunities from July 2026
+              </p>
+            </div>
 
-              <div className="glass-card rounded-xl p-6 text-center">
-                <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Calendar size={24} className="text-primary-foreground" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">
-                  Available
-                </h4>
-                <p className="text-foreground-secondary text-sm">
-                  Ready to start immediately after graduation
-                </p>
+            <div className="glass-card rounded-xl p-6 text-center">
+              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calendar size={24} className="text-primary-foreground" />
               </div>
+              <h4 className="font-semibold text-foreground mb-2">
+                Available
+              </h4>
+              <p className="text-foreground-secondary text-sm">
+                Ready to start immediately after graduation
+              </p>
             </div>
           </div>
         </div>
@@ -155,3 +180,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

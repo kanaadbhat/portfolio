@@ -19,9 +19,7 @@ const Intro = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-foreground-secondary mb-8 max-w-3xl mx-auto">
-            A creative and solution-oriented Full Stack Developer passionate
-            about building innovative applications and solving real-world
-            challenges.
+            Full Stack Developer & DevOps Engineer.
           </p>
           <div className="mb-8">
             <span className="block text-sm text-foreground-muted italic">

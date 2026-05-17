@@ -16,8 +16,9 @@ const MyWork = () => {
             My <span className="text-gradient">Work</span>
           </h2>
           <p className="text-foreground-secondary text-lg max-w-2xl mx-auto">
-            Here are some projects I'm most proud of. Each one taught me
-            something new.
+            Selected projects with a focus on architecture, scalability,
+            backend systems, and deployment details — technical decisions
+            and learnings highlighted.
           </p>
         </div>
 

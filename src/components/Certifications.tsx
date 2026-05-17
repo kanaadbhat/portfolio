@@ -117,42 +117,7 @@ const Certifications = () => {
             </div>
           </div>
 
-          {/* Current Learning */}
-          <div className="mt-12">
-            <h3 className="text-2xl font-bold text-foreground text-center mb-8">
-              Currently Learning
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="glass-card rounded-xl p-6 border border-primary/30">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                  <span className="text-primary font-semibold">
-                    In Progress
-                  </span>
-                </div>
-                <h4 className="font-bold text-foreground mb-2">
-                  Microsoft Power BI
-                </h4>
-                <p className="text-foreground-secondary text-sm">
-                  Data visualization, dashboard creation, and business
-                  intelligence analytics
-                </p>
-              </div>
-
-              <div className="glass-card rounded-xl p-6 border border-accent/30">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-                  <span className="text-accent font-semibold">Planning</span>
-                </div>
-                <h4 className="font-bold text-foreground mb-2">
-                  Docker & Kubernetes
-                </h4>
-                <p className="text-foreground-secondary text-sm">
-                  Container orchestration and cloud deployment strategies
-                </p>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>

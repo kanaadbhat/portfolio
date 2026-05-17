@@ -1,4 +1,4 @@
-import { Code, Smartphone, Database, Globe, Wrench, Brain } from "lucide-react";
+import { Code, Database, Globe, Wrench, Brain } from "lucide-react";
 import skillCategories from "@/data/skillCategories";
 
 const TechStack = () => {
@@ -84,10 +84,10 @@ const TechStack = () => {
                   <Brain size={28} className="text-primary-foreground" />
                 </div>
                 <h4 className="font-semibold text-foreground mb-2">
-                  Machine Learning
+                  AWS Certification Prep
                 </h4>
                 <p className="text-foreground-secondary text-sm">
-                  Scikit Learn, AI Integration
+                  Preparing for AWS Solutions Architect Associate exam
                 </p>
               </div>
             </div>
