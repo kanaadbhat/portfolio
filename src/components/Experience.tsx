@@ -48,9 +48,9 @@ const Experience = () => {
                             <div className="flex items-center">
                               <div className="p-1 bg-white rounded-xl mr-4 flex-shrink-0 w-14 h-14 flex items-center justify-center border border-card-border overflow-hidden">
                                 {exp.logo ? (
-                                  <img 
-                                    src={exp.logo} 
-                                    alt={`${exp.organization} logo`} 
+                                  <img
+                                    src={exp.logo}
+                                    alt={`${exp.organization} logo`}
                                     className="w-full h-full object-contain"
                                   />
                                 ) : (
@@ -61,19 +61,19 @@ const Experience = () => {
                                 <h3 className="text-xl font-bold text-foreground leading-tight mb-1">
                                   {exp.role}
                                 </h3>
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 flex-wrap">
                                   <p className="text-base text-primary font-semibold">
                                     {exp.organization}
                                   </p>
                                   {exp.website && (
-                                    <a 
-                                      href={exp.website} 
-                                      target="_blank" 
+                                    <a
+                                      href={exp.website}
+                                      target="_blank"
                                       rel="noopener noreferrer"
-                                      className="text-foreground-secondary hover:text-primary transition-colors"
+                                      className="text-foreground-secondary hover:text-primary transition-colors text-sm underline-offset-4 hover:underline"
                                       title="Visit website"
                                     >
-                                      <ExternalLink size={14} />
+                                      {exp.website.replace(/^https?:\/\//, "")}
                                     </a>
                                   )}
                                 </div>
@@ -201,3 +201,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

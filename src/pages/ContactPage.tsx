@@ -8,13 +8,14 @@ const ContactPage = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
         <title>Contact | Kanaad Bhat</title>
-        <meta name="description" content="Get in touch with Kanaad Bhat. Send a message, connect on social media, or reach out via email for collaboration opportunities and inquiries." />
-        <meta name="keywords" content="contact Kanaad Bhat, hire full stack developer, web development inquiry, software development contact" />
+        <meta name="description" content="Contact Kanaad Bhat for full stack development, DevOps, collaboration opportunities, and project inquiries." />
+        <meta name="keywords" content="contact Kanaad Bhat, hire full stack developer, DevOps engineer, collaboration, project inquiry" />
         <link rel="canonical" href="https://kanaad.in/contact" />
         <meta property="og:title" content="Contact | Kanaad Bhat" />
-        <meta property="og:description" content="Get in touch with Kanaad Bhat. Send a message or connect on social media for collaboration opportunities." />
+        <meta property="og:description" content="Contact Kanaad Bhat for full stack development, DevOps, collaboration opportunities, and project inquiries." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://kanaad.in/contact" />
+        <meta property="og:site_name" content="Kanaad Bhat" />
       </Helmet>
       <Header />
       <main id="main-content" className="flex-1 flex items-center justify-center">

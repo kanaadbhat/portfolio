@@ -1,10 +1,13 @@
+import inewLogo from "../assets/inew.png";
+import aqeeqLogo from "../assets/aqeeq.jpg";
+
 const experience = [
   {
     organization: "Inew Technologies, Pune",
     role: "Full Stack Developer (Internship)",
     mode: "Remote",
     duration: "27 June 2025 – 27 August 2025",
-    logo: "/src/assets/inew.png",
+    logo: inewLogo,
     website: "https://www.inewtech.in",
     responsibilities: [
       "Contributed to the development of complex, enterprise-grade ERP products, translating intricate business workflows into intuitive user experiences.",
@@ -29,7 +32,7 @@ const experience = [
     role: "Full Stack Developer & DevOps Engineering Intern",
     mode: "Onsite",
     duration: "January 2026 – June 2026",
-    logo: "/src/assets/aqeeq.jpg",
+    logo: aqeeqLogo,
     website: "https://www.aqeeq.io",
     responsibilities: [
       "Architected end-to-end features by integrating interactive React frontends with robust Node.js & Express.js REST APIs.",

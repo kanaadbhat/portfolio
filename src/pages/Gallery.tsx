@@ -44,13 +44,14 @@ const GalleryPage: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-background-secondary">
       <Helmet>
         <title>Gallery | Kanaad Bhat</title>
-        <meta name="description" content="Explore a visual collection of moments, projects, and memories from Kanaad Bhat's professional journey and achievements." />
-        <meta name="keywords" content="Kanaad Bhat gallery, portfolio gallery, project images, achievements, awards" />
+        <meta name="description" content="Browse visual highlights from Kanaad Bhat's portfolio, including project moments, achievements, and professional milestones." />
+        <meta name="keywords" content="Kanaad Bhat gallery, portfolio gallery, project images, achievements, awards, professional milestones" />
         <link rel="canonical" href="https://kanaad.in/gallery" />
         <meta property="og:title" content="Gallery | Kanaad Bhat" />
-        <meta property="og:description" content="Explore a visual collection of moments, projects, and memories from Kanaad Bhat's professional journey." />
+        <meta property="og:description" content="Browse visual highlights from Kanaad Bhat's portfolio, including project moments, achievements, and professional milestones." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://kanaad.in/gallery" />
+        <meta property="og:site_name" content="Kanaad Bhat" />
       </Helmet>
       <Header />
       <main id="main-content" className="flex-1">
